@@ -25,7 +25,9 @@ abstract class AbstractBridgeClient
 
     public function __construct($API_URL)
     {
-        $this->BrigeClient = new Client();
+        $this->API_URL = $API_URL;
+
+        $this->BrigeClient = new Client(['base_uri' => $this->API_URL]);
     }
 
 }

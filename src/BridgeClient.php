@@ -7,7 +7,7 @@ class BridgeClient extends AbstractBridgeClient
     public function createUser($email, $password)
     {
         try {
-            $this->BrigeClient->request('POST', 'https://api.storj.io/users', [
+            $this->BrigeClient->request('POST', '/users', [
                 'json' => ['email' => $email, 'password' => hash('sha256', $password)]
             ]);
             return true;
