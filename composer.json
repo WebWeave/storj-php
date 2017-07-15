@@ -1,0 +1,25 @@
+{
+    "name": "webweave/storj-php",
+    "description": "Implementation of the Storj protocol for PHP",
+    "keywords": ["Storj", "file storage", "Blockchain"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sander de Jonge",
+            "email": "sander@web-weave.com"
+        }
+    ],
+    "type": "project",
+    "require": {
+		"php": ">=5.6",
+        "guzzlehttp/guzzle": "~6.0"
+    },
+	"require-dev": {
+		"phpunit/phpunit": "5.2.*"
+    },
+	"autoload": {
+        "psr-4": {
+            "WebWeave\\StorjPHP\\": "src/"
+        }
+    }
+}
