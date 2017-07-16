@@ -35,20 +35,6 @@ class BridgeClient extends AbstractBridgeClient
         }
     }
 
-    private function isAuthSet($method)
-    {
-        switch ($method) {
-            case 'basic':
-                if (empty($this->basicAuth)) {
-                    throw new \Exception('Please set basic authentication first');
-                }
-                break;
-            default:
-                throw new \Exception('Not a valid authentication method');
-                break;
-        }
 
-        return true;
-    }
 
 }
