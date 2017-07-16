@@ -19,6 +19,11 @@ abstract class AbstractBridgeClient
     protected $BrigeClient;
 
     /**
+     * @var $basicAuth
+     */
+    protected $basicAuth;
+
+    /**
      * AbstractBridgeClient constructor.
      * @param $API_URL
      */
@@ -28,6 +33,14 @@ abstract class AbstractBridgeClient
         $this->API_URL = $API_URL;
 
         $this->BrigeClient = new Client(['base_uri' => $this->API_URL]);
+    }
+
+    public function setBasicAuth($email, $password)
+    {
+        $this->basicAuth = array(
+            'username' => $email,
+            'password' => hash('sha256', $password)
+        );
     }
 
 }
