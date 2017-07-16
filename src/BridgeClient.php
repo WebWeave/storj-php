@@ -44,7 +44,7 @@ class BridgeClient extends AbstractBridgeClient
                 }
                 break;
             default:
-                throw new \Exception('Not a valid valid');
+                throw new \Exception('Not a valid authentication method');
                 break;
         }
 
