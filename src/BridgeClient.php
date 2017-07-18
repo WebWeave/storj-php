@@ -53,5 +53,21 @@ class BridgeClient extends AbstractBridgeClient
         }
     }
 
+    public function destroyPublicKey($publicKey)
+    {
+        if ($this->isAuthSet('basic')) {
+            try {
+                $this->BrigeClient->request('DELETE', '/keys/'.$publicKey, [
+                    'auth' => [$this->basicAuth['username'], $this->basicAuth['password']]
+                ]);
+                return true;
+            } catch (RequestException $e) {
+                $response = $e->getResponse();
+                $body = $response->getBody()->getContents();
+                return $body;
+            }
+        }
+    }
+
 
 }
