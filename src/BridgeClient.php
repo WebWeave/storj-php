@@ -69,5 +69,21 @@ class BridgeClient extends AbstractBridgeClient
         }
     }
 
+    public function getBuckets()
+    {
+        if ($this->isAuthSet('basic')) {
+            try {
+                $res = $this->BrigeClient->request('GET', '/buckets', [
+                    'auth' => [$this->basicAuth['username'], $this->basicAuth['password']]
+                ]);
+                return json_decode($res->getBody()->getContents());
+            } catch (RequestException $e) {
+                $response = $e->getResponse();
+                $body = $response->getBody()->getContents();
+                return $body;
+            }
+        }
+    }
+
 
 }
