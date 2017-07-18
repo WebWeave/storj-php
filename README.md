@@ -70,3 +70,29 @@ $keyPair = new KeyPair();
 $client->addPublicKey($keyPair->getPublicKey());
 ```
 
+Add a new bucket, and list all buckets
+```PHP
+<?php
+
+use WebWeave\StorjPHP\BridgeClient;
+
+// Create client for interacting with API
+$client = new BridgeClient('https://api.storj.io');
+// Login
+$client->setBasicAuth($email, $password);
+
+//BucketInfo
+$bucketInfo = array('name' => 'bucket_name');
+
+// Add a new bucket
+$client->createBucket($bucketInfo);
+
+// Get all buckets
+$buckets = $client->getBuckets();
+
+//List all buckets
+foreach($buckets as $bucket) {
+    echo $bucket->name . PHP_EOL;
+    echo $bucket->status . PHP_EOL;
+}
+```
