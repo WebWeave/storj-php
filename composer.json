@@ -2,6 +2,7 @@
     "name": "webweave/storj-php",
     "description": "Implementation of the Storj protocol for PHP",
     "keywords": ["Storj", "file storage", "Blockchain"],
+    "version": "1.0.0-alpha1",
     "license": "MIT",
     "authors": [
         {
@@ -9,7 +10,7 @@
             "email": "sander@web-weave.com"
         }
     ],
-    "type": "project",
+    "type": "library",
     "require": {
 		"php": ">=5.6",
         "guzzlehttp/guzzle": "~6.0",
