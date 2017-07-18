@@ -7,6 +7,17 @@ WARNING
 
 This piece of software is provided without warranty of any kind, use it at your own risk.
 
+TODO AND DONE
+===============
+- [x] Create users
+- [x] Basic authentication
+- [x] Generate ecdsa and add them
+- [x] List and delete ecdsa keys
+- [x] List and create buckets
+- [ ] Ecdsa authentication
+- [ ] File upload
+- [ ] File download
+
 REQUIREMENTS
 ===============
 
