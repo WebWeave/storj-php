@@ -31,3 +31,42 @@ USAGE
 **Installation**
 
 Best way is to use composer
+```
+  //since its still in development add it to your composer.json
+  "require": {
+    "webweave/storj-php": "dev-master"
+  }
+```
+
+**Basic Code examples**
+
+Create a new user
+```PHP
+<?php
+
+use WebWeave\StorjPHP\BridgeClient;
+
+// Create client for interacting with API
+$client = new BridgeClient('https://api.storj.io');
+// Create user
+$client->createUser($email, $password);
+```
+Add a new ecdsa public key to a account
+```PHP
+<?php
+
+use WebWeave\StorjPHP\BridgeClient;
+use WebWeave\StorjPHP\KeyPair;
+
+// Create client for interacting with API
+$client = new BridgeClient('https://api.storj.io');
+// Login
+$client->setBasicAuth($email, $password);
+
+// Generate a new keypair
+$keyPair = new KeyPair();
+
+// Add it to the account
+$client->addPublicKey($keyPair->getPublicKey());
+```
+
